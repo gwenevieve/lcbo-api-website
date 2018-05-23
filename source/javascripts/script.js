@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
 id = []; // empty array... for our data!
 
   var resultData = function(data) {
@@ -39,24 +38,26 @@ id = []; // empty array... for our data!
           $.each(data.result, function(i, data) {
             if (data.image_url === null || data.tasting_note === null || data.tags.includes('lug tread')) {
             } else {
+              //if we're storing the data, push it to the empty array
               id.push(data.id)
     }
     })
     }
     //after this call is completed, let's do the next call to the api
   }).then(function() {
-      $.each(data.result, function(i, data) {
+    //for each id, run this ajax call
+      $.each(id, function(index, id) {
     jQuery.ajax({
       // check what stores carry this product
-      url: 'lcboapi.com/stores?product_id=' + id,
-      async: false,
+      url: 'https://lcboapi.com/stores?product_id=' + id,
       headers: {
         'Authorization': 'Token MDo0YmEyZTA4Mi00YmUyLTExZTgtYjE5MC1jZmRmNTI4ZTVjNTQ6NVJEWnR4Y0FwV3pYdERMTVdCZTNxcWdBVnVvU1czWTEyS1FQ'
       },
       success: function(data) {
-          storeData(data);
+          console.log(data.result)
   }
 })
+$('#beauList').append('<p>Stores with stock:</p>')
 })
 })
 });
