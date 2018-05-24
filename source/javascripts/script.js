@@ -1,5 +1,7 @@
 $(document).ready(function() {
 id = []; // empty array... for our data!
+productName = [];
+storeNames = [];
 
   var resultData = function(data) {
     //looping through the data returned on the first call to the API
@@ -11,7 +13,7 @@ id = []; // empty array... for our data!
         var name = data.name;
         var tasting_note = data.tasting_note;
         //let's append our data to the page
-        $('#beauData').append("<div class='beau--child'><img class='beau--img' src=" + image + "><p>" + name + "</p><div><button class='beau--desc__button'>Click here to see more</button><div class='beau--desc hidden'><p>" + tasting_note + "</p><p>Stores with stock:</p><ul><li></li></ul></div></div></div>")
+        $('#beauData').append("<div class='beau--child'><img class='beau--img' src=" + image + "><p>" + name + "</p><div><button class='beau--desc__button'>Click here to see more</button><div class='beau--desc hidden'><p>" + tasting_note + "</p><p>Stores with stock:</p><ul>" + "</ul></div></div></div>")
       }
     })
 // description button, displays data.tasting_note and the list of stores that have the current product
@@ -54,10 +56,11 @@ id = []; // empty array... for our data!
         'Authorization': 'Token MDo0YmEyZTA4Mi00YmUyLTExZTgtYjE5MC1jZmRmNTI4ZTVjNTQ6NVJEWnR4Y0FwV3pYdERMTVdCZTNxcWdBVnVvU1czWTEyS1FQ'
       },
       success: function(data) {
-          console.log(data.result)
+        //two separate arrays so that we can make key value pair
+        productName.push(data.product.name)
+        storeNames.push(data.result)
   }
 })
-$('#beauList').append('<p>Stores with stock:</p>')
 })
 })
 });
