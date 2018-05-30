@@ -13,7 +13,7 @@ storeNames = [];
         var name = data.name;
         var tasting_note = data.tasting_note;
         //let's append our data to the page
-        $('#beauData').append("<div class='beau--child'><img class='beau--img' src=" + image + "><p>" + name + "</p><div><button class='beau--desc__button'>Click here to see more</button><div class='beau--desc hidden'><p>" + tasting_note + "</p><p>Stores with stock:</p><ul>" + "</ul></div></div></div>")
+        $('#beauData').append("<div class='beau--child'><img class='beau--img' src=" + image + "><p>" + name + "</p><div><button class='beau--desc__button'>Click here to see more +</button><div class='beau--desc hidden'><p>" + tasting_note + "</p><p>Stores with stock:</p><ul>" + "</ul></div></div></div>")
       }
     })
 // description button, displays data.tasting_note and the list of stores that have the current product
