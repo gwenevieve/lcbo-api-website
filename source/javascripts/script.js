@@ -1,7 +1,11 @@
 $(document).ready(function() {
 id = []; // empty array... for our data!
 productName = [];
-storeNames = [];
+
+products = {}
+productArray = [];
+storeName = name;
+
 
   var resultData = function(data) {
     //looping through the data returned on the first call to the API
@@ -57,8 +61,12 @@ storeNames = [];
       },
       success: function(data) {
         //two separate arrays so that we can make key value pair
-        productName.push(data.product.name)
-        storeNames.push(data.result)
+        console.log(data.product.name)
+        productArray.push(data.product.name);
+        $.each(data.result, function(i, data) {
+          //console.log(data.name)
+            productArray.push(data.name);
+            })
   }
 })
 })
