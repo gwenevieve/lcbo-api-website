@@ -15,20 +15,20 @@ button {
   }
 }
 
-.beau--parent {
+.product--parent {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   text-align: center;
 }
 
-.beau--child {
+.product--child {
   width: 300px;
   height: 700px;
   margin: auto;
 }
 
-.beau--img {
+.product--img {
   max-height: 300px;
   border: 1px solid #c7c8ca;
 }
