@@ -5,6 +5,12 @@ $(document).ready(function() {
     searchFunction();
   })
 
+  $(document).on('click', '.product--desc__button', function() {
+    console.log('test');
+    $(this.nextSibling).toggleClass('hidden open');
+});
+
+
   function searchFunction() {
     products = [];
     var resultData = function(data) {};
@@ -42,9 +48,8 @@ $(document).ready(function() {
         })
       })
       var displayResults = (function() {
-        console.log(products);
         $.each(products, function(i, products) {
-          console.log(products.name);
+            $('#productData').append("<div class='product--child'><img class='product--img' src=" + products.image + "><p>" + products.name + "</p><div><button class='product--desc__button'>Click here to see more +</button><div class='product--desc hidden'><p>" + products.description + "</p><p>Stores with stock:</p><ul>" + products.stores + "</ul></div></div></div>");
         })
       })();
     })

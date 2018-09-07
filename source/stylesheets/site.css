@@ -10,6 +10,9 @@ button {
     cursor: pointer;
     border: 1px solid #c7c8ca; }
 
+form {
+  padding: 0px 30px 16px; }
+
 .product--parent {
   display: flex;
   flex-direction: row;
