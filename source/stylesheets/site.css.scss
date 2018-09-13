@@ -1,22 +1,51 @@
 body {
   color: #333;
-  font-family: Georgia, sans-serif;
+  font-family: 'Raleway', Georgia, sans-serif;
+  margin: 0px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+  line-height: 48px;
+  font-size: 48px;
+  margin: 12px 0px 36px;
 }
 
 button {
-  color: black;
-  border: 1px solid #c7c8ca;
+  color: #6f6f6f;
+  border: 1px solid #000000;
   padding: 15px;
 
   &:focus,
   &:hover {
     cursor: pointer;
-    border: 1px solid #c7c8ca;
+    border: 1px solid #000000;
   }
 }
 
 form {
-  padding: 0px 30px 16px;
+  padding: 0px 30px 36px;
+}
+
+.fa-spinner {
+  animation: spinner 2s infinite linear;
+  -webkit-animation: spinner 2s infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading--data {
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .product--parent {
@@ -34,9 +63,65 @@ form {
 
 .product--img {
   max-height: 300px;
-  border: 1px solid #c7c8ca;
+  border: 1px solid #000000;
+  padding: 20px;
+}
+
+input {
+  border: 1px solid #000000;
+  color: #6f6f6f;
+  padding: 7px 15px;
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+ color: #6f6f6f;
+  &::-moz-placeholder { /* Firefox 19+ */
+ color: #6f6f6f;
+}
+}
+}
+
+input[type="submit"] {
+  border: 1px solid #000000;
+  padding: 7px 15px;
 }
 
 .hidden {
   display: none;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

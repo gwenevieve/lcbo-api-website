@@ -6,12 +6,12 @@ $(document).ready(function() {
   })
 
   $(document).on('click', '.product--desc__button', function() {
-    console.log('test');
-    $(this.nextSibling).toggleClass('hidden open');
+    $(this.nextSibling).css('display','block');
 });
 
-
   function searchFunction() {
+    $('#productData').html('<div class="loading--data"><h2>Loading results... </h2><i class="fas fa-2x fa-spinner"></i></div>');
+
     products = [];
     var resultData = function(data) {};
     jQuery.ajax({
@@ -22,6 +22,7 @@ $(document).ready(function() {
       },
       success: function(data) {
         $.each(data.result, function(i, data) {
+          console.log(data.name);
           products.push({
             name: data.name,
             id: data.id,
@@ -48,10 +49,13 @@ $(document).ready(function() {
         })
       })
       var displayResults = (function() {
+        $('#productData').html('');
+
         $.each(products, function(i, products) {
-            $('#productData').append("<div class='product--child'><img class='product--img' src=" + products.image + "><p>" + products.name + "</p><div><button class='product--desc__button'>Click here to see more +</button><div class='product--desc hidden'><p>" + products.description + "</p><p>Stores with stock:</p><ul>" + products.stores + "</ul></div></div></div>");
+            $('#productData').append("<div class='product--child'><img class='product--img' src=" + products.image + "><p>" + products.name + "</p><button class='product--desc__button'>Click here to see more +</button><div class='myModal modal'><div class='modal-content'><span class='close'>&times;</span><p>Lorem ipsum</p>  </div>  </div>");
         })
       })();
     })
   }
+
 })
