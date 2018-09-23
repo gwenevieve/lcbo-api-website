@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+  $(document).on('click', '.close', function() {
+$('.modal').css('display','none');
+console.log('click detected');
+})
+
+
   $('#submit').click(function(e) {
     e.preventDefault();
     searchFunction();
@@ -22,7 +28,6 @@ $(document).ready(function() {
       },
       success: function(data) {
         $.each(data.result, function(i, data) {
-          console.log(data.name);
           products.push({
             name: data.name,
             id: data.id,
@@ -50,9 +55,12 @@ $(document).ready(function() {
       })
       var displayResults = (function() {
         $('#productData').html('');
-
         $.each(products, function(i, products) {
-            $('#productData').append("<div class='product--child'><img class='product--img' src=" + products.image + "><p>" + products.name + "</p><button class='product--desc__button'>Click here to see more +</button><div class='myModal modal'><div class='modal-content'><span class='close'>&times;</span><p>Lorem ipsum</p>  </div>  </div>");
+
+  //      console.log(products[i].stores[i].name);
+          })
+        $.each(products, function(i, products) {
+            $('#productData').append("<div class='product--child'><img class='product--img' src=" + products.image + "><p>" + products.name + "</p><button class='product--desc__button'>Click here to see more +</button><div class='modal'><div class='modal--content'><div class='modal--picture'><img width='200' src=" + products.image + "></div><div class='modal--inner'><h3>" + products.name + "</h3>" + products.description + "</div><span class='close'>&times;</span><p>" + products.stores + "</p></div></div>");
         })
       })();
     })
