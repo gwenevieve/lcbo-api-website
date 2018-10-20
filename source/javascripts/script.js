@@ -60,7 +60,7 @@ console.log('click detected');
   //      console.log(products[i].stores[i].name);
           })
         $.each(products, function(i, products) {
-            $('#productData').append("<div class='product--child'><img class='product--img' src=" + products.image + "><p>" + products.name + "</p><button class='product--desc__button'>Click here to see more +</button><div class='modal'><div class='modal--content'><div class='modal--picture'><img width='200' src=" + products.image + "></div><div class='modal--inner'><h3>" + products.name + "</h3>" + products.description + "</div><span class='close'>&times;</span><p>" + products.stores + "</p></div></div>");
+            $('#productData').append("<div class='product--child'><img class='product--img' src=" + products.image + "><p>" + products.name + "</p><button class='product--desc__button'>Click here to see more +</button><div class='modal'><div class='modal--content'><span class='close'>&times;</span><div class='modal--picture'><img width='200' src=" + products.image + "></div><div class='modal--inner'><h3>" + products.name + "</h3>" + products.description + "</div><p>" + products.stores + "</p></div></div>");
         })
       })();
     })
