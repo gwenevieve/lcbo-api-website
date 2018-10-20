@@ -106,13 +106,14 @@ input[type="submit"] {
   text-decoration: none;
   cursor: pointer; }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 576px) {
   .close {
     display: flex;
     justify-content: flex-end; }
 
   .modal--content {
     display: flex;
-    flex-direction: column; } }
+    flex-direction: column;
+    width: 80%; } }
 
 /*# sourceMappingURL=site.css.map */

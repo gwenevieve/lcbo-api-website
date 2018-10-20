@@ -28,6 +28,9 @@ console.log('click detected');
       },
       success: function(data) {
         $.each(data.result, function(i, data) {
+          // Filter because I don't want empty data
+          if (data.image_url && data.name && data.tasting_note !== null) {
+            // Push the data to our array for accessing later
           products.push({
             name: data.name,
             id: data.id,
@@ -35,10 +38,12 @@ console.log('click detected');
             description: data.tasting_note,
             stores: []
           })
+        }
         })
       }
     }).then(function() {
       $.each(products, function(i, products) {
+        // Call the stores with product id
         jQuery.ajax({
           url: 'https://lcboapi.com/stores?product_id=' + products.id,
           headers: {
@@ -55,10 +60,6 @@ console.log('click detected');
       })
       var displayResults = (function() {
         $('#productData').html('');
-        $.each(products, function(i, products) {
-
-  //      console.log(products[i].stores[i].name);
-          })
         $.each(products, function(i, products) {
             $('#productData').append("<div class='product--child'><img class='product--img' src=" + products.image + "><p>" + products.name + "</p><button class='product--desc__button'>Click here to see more +</button><div class='modal'><div class='modal--content'><span class='close'>&times;</span><div class='modal--picture'><img width='200' src=" + products.image + "></div><div class='modal--inner'><h3>" + products.name + "</h3>" + products.description + "</div><p>" + products.stores + "</p></div></div>");
         })
