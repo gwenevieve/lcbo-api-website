@@ -1,0 +1,33 @@
+- blog_post:
+  blog_desc: |
+   <div class="product-child">
+    <img class="product-img" src="/images/whisky-on-rocks.jpg" alt="whisky being poured onto ice">
+    <h3>Fantastic Canadian Whiskies</h3>
+    <p>Our take of the best Canadian Whiskies for this upcoming winter season.</p>
+    </div>
+
+- blog_post:
+  blog_desc: |
+    <div class="product-child">
+    <img class="product-img" src="/images/european-wines.jpg" alt="collection of european wines">
+    <h3>Our Favourite Fall Picks</h3>
+    <p>Pumpkins. Leaves. The cold, brisk autumn air. Autumn is here and so are our favourite picks of this season.</p>
+    </div>
+
+- blog_post:
+  blog_desc: |
+    <div class="product-child">
+    <img class="product-img" src="/images/whisky-decanter.jpg" alt="whisky and decanter">
+    <h3>Explore Our New Collections</h3>
+    <p>The holiday season is upon us! New collections that are perfect for giving (or receiving!). While supplies last, selected locations only.</p>
+    </div>
+
+- blog_post:
+  blog_desc: |
+    <div class="product-child">
+    <img class="product-img" src="/images/japanese-whisky.jpg" alt="bottle of japanese whisky">
+    <h3>Japanese Import Specialties</h3>
+    <p>High quality Japanese imports are now available at select stores. While supplies last. Click
+    <a href="#">here</a>
+    for details.</p>
+    </div>
